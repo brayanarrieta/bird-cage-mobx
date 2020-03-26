@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Birds from './Birds';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'mobx-react';
+import BirdStore from './stores/BirdStore';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider BirdStore={BirdStore}>
+      <Birds />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
